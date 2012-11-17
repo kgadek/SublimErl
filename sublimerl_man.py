@@ -55,7 +55,7 @@ class SublimErlMan():
 	def update_panel(self):
 		if len(self.panel_buffer):
 			panel_edit = self.panel.begin_edit()
-			self.panel.insert(panel_edit, self.panel.size(), self.panel_buffer)
+      self.panel.insert(panel_edit, self.panel.size(), unicode(self.panel_buffer, errors='replace'))
 			self.panel.end_edit(panel_edit)
 			self.panel.show(self.panel.size())
 			self.panel_buffer = ''
